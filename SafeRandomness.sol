@@ -64,9 +64,8 @@ contract SafeRandomness is Algorythms {
          while (result == 0) {
              result += _pickRandomAlgorythm();
          }
-         if (result > 0) 
          return result;
-         else return _pickRandomAlgorythm();
+        
         }
     
 }
