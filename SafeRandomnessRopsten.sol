@@ -15,8 +15,8 @@ pragma solidity ^0.4.19;
  *              (these algorythms remain hidden from public with the use of contract import and no one can reach them)
  *          4 - This file finally returns a totally safe random uint to the user without burning any gas nor using an external oracle.
  *
- * @use :   Simply import SafeRandomnessRopsten.sol to your smart contract and call "generateSafeRand()" to get you random number. 
- * @note :  function returns only one result per block. The result is different for each msg.sender 
+ * Use :   Simply import SafeRandomnessRopsten.sol to your smart contract and call "generateSafeRand()" to get you random number. 
+ * Note :  function returns only one result per block. The result is different for each msg.sender 
 **/
 
 // Algorythms are kept hidden from public - We use an interface instead :
