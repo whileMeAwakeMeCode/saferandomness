@@ -44,7 +44,7 @@ contract SafeRandomness {
     
     function SafeRandomness() {
         owner = msg.sender;
-        algo = AlgoInterface(0xf08f30db6a6b971597ed328ea282bf6e9fc51bbd);   // address of algorythms.sol (hidden)
+        algo = AlgoInterface(0xf08f30db6a6b971597ed328ea282bf6e9fc51bbd);   // address of algorythms.sol (ethereum mainnet)
     }
     
   function _unsecureRandomNum(uint _randomDigits) internal view returns(uint result) {
