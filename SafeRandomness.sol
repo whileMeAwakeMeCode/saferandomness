@@ -79,7 +79,7 @@ contract SafeRandomness {
                  return algo.executeAlgo10(num);
     }
     
-    function generateSafeRand() external view returns (uint){
+    function generateSafeRand() internal view returns (uint){
         
          uint result = _pickRandomAlgorythm();
          
