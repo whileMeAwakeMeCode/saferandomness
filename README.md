@@ -2,13 +2,15 @@
 
 For ROPSTEN TESTNET USE : 
 
-Simply import "./SafeRandomnessRopsten.sol";
-and call generateSafeRand() 
+import "http://github.com/whileMeAwakeMeCode/saferandomness/SafeRandomnessRopsten.sol";
+inherit : "YourContract is SafeRandomness"
+call function generateSafeRand() 
 
 For MAINNET USE :
 
-Simply import "./SafeRandomness.sol";
-and call generateSafeRand()
+import "http://github.com/whileMeAwakeMeCode/saferandomness/SafeRandomness.sol";
+inherit : "YourContract is SafeRandomness"
+call function generateSafeRand()
 
-@credit : Mathieu L.
-@ctc : matsolidity@gmail.com
+by : Mathieu L.
+matsolidity@gmail.com
