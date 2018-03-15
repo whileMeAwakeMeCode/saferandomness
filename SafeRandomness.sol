@@ -33,17 +33,10 @@ contract AlgoInterface {
 }
 
 contract SafeRandomness {
-    
-    address owner;
+   
     AlgoInterface algo;
     
-    modifier owneronly() {
-        require(msg.sender == owner);
-        _;
-    }
-    
     function SafeRandomness() {
-        owner = msg.sender;
         algo = AlgoInterface(0xf08f30db6a6b971597ed328ea282bf6e9fc51bbd);   // address of algorythms.sol (ethereum mainnet)
     }
     
@@ -51,8 +44,7 @@ contract SafeRandomness {
         uint rand = (uint(keccak256(now, _randomDigits)));
         return rand;
     }
-       
-
+ 
     function _pickRandomAlgorythm() internal view returns(uint) {
         uint rand = (_unsecureRandomNum(uint8(msg.sender)))%100;
         uint num = _unsecureRandomNum(uint8(msg.sender));
