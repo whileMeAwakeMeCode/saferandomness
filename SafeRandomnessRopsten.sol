@@ -34,17 +34,9 @@ contract AlgoInterface {
 }
 
 contract SafeRandomness {
-    
-    address owner;
     AlgoInterface algo;
     
-    modifier owneronly() {
-        require(msg.sender == owner);
-        _;
-    }
-    
     function SafeRandomness() {
-        owner = msg.sender;
         algo = AlgoInterface(0x2a1f1c48a3cb6cda970424254f7a65b4d9f53562);   // address of hidden algorythms.sol (Ropsten TESTNET)
     }
     
@@ -52,8 +44,7 @@ contract SafeRandomness {
         uint rand = (uint(keccak256(now, _randomDigits)));
         return rand;
     }
-       
-
+      
     function _pickRandomAlgorythm() internal view returns(uint) {
         uint rand = (_unsecureRandomNum(uint8(msg.sender)))%100;
         uint num = _unsecureRandomNum(uint8(msg.sender));
