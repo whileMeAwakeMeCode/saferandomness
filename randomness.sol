@@ -131,7 +131,7 @@ contract Randomness is Algorythms {
                 result = failSafe(); 
             }
             return result;
-    }
+    } 
     
     
 
