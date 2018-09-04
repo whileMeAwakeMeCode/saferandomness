@@ -33,5 +33,5 @@ contract Randomness {
         if (uint(result) != 0) return result;
     }
 
-}
+} 
 
