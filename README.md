@@ -16,7 +16,7 @@ call function generateSafeRand()
 
 This "module" is designed to failsafe any "zero" response. 
 
-/!\ randomness.sol must remain hidden from public and imported through a contract interface, my second file :
+/!\ randomness.sol must remain hidden from public and imported through a contract interface :
 - saferandomness.sol          // this contract MUST be imported instead, this way, algorythms are kept secret. 
 
 Usage :
