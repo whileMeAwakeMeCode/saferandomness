@@ -35,7 +35,7 @@ contract Algorythms {
         uint result = (_rand%100000000)/1000000;
         return result.add(1);
     }
-    
+     
     function executeAlgo5(uint _rand) internal pure returns(uint) {
         
         uint result = (_rand%10000000000)/100000000;
