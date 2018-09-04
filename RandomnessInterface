@@ -1,0 +1,37 @@
+pragma solidity^0.4.21;
+
+import "./safemath.sol";
+
+contract RandomnessInterface {
+    
+    function random(uint _unsecure, uint _modulo) public view returns (uint secure);
+    function hash (string toHash, bytes32 hashCode) public view returns (bytes32);
+    
+}
+
+// this contract may be exported for use of secureUnsecure()
+contract Randomness {
+    using SafeMath for uint256;
+    
+    RandomnessInterface securize;
+                            
+    constructor() {     // ex Address : 0x61e97835ae745bf6e3afca6e45a6506bc2b01325
+        securize = RandomnessInterface(/*YOUR_RANDOM_CONTRACT_ADDRESS*/); 
+    }
+
+    function random(uint _unsecure, uint _modulo) public view returns (uint secure) {
+        require(_unsecure > 0);
+        uint result =  securize.random(_unsecure, _modulo);
+        if (uint(result) == 0) 
+        result = securize.random((uint(keccak256(_unsecure))), _modulo);
+        if (uint(result) != 0) return result;
+    }
+    
+    
+    function hash (string toHash, bytes32 hashCode) public view returns (bytes32) {
+        bytes32 result =  securize.hash(toHash, hashCode);
+        if (uint(result) != 0) return result;
+    }
+
+}
+
